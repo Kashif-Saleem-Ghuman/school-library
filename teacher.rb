@@ -6,7 +6,6 @@ class Teacher < Person
     @sepcialization = sepcialization
   end
 
-  # Override can_use_services? so it always returns true.
   def can_use_services?
     true
   end
