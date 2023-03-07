@@ -9,18 +9,11 @@ class Person
   # getter for id
   attr_reader :id
 
-  # getter for name
-  attr_accessor :name
-
-  # getter for age
-  attr_accessor :age
-
-  # setter for name
-
-  # setter for age
+  # getter for name and age
+  attr_accessor :name, :age
 
   def can_use_services?
-    is_of_age? || @parent_permission
+    of_age? || @parent_permission
   end
 
   private
