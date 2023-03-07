@@ -16,6 +16,7 @@ This is an example of how you may give instructions on setting up your project l
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
+- [🔭 Future Features](#future-features)
 - [👥 Authors](#authors)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -48,11 +49,9 @@ This is an example of how you may give instructions on setting up your project l
 
 ### Key Features <a name="key-features"></a>
 
-- **Add new students or teachers **
+- **Add new students or teachers**
 - **Add new books**
-- **Add new books **
-
-
+- **Add new books**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
@@ -64,6 +63,16 @@ A basic understanding of Ruby and Git
 ### Usage
 1. Install Ruby
 2. Clone this repo `git clone https://github.com/Kashif-Saleem-Ghuman/school-library.git`
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Add delete books feature**
+- [ ] **Add delete students feature**
+- [ ] **Add delete teachers feature**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
@@ -104,7 +113,6 @@ If you like this project please give a⭐️ and share with your friends.
 - Hat tip to anyone whose code was used
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 
