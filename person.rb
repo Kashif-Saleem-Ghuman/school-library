@@ -9,7 +9,7 @@ class Person
   # getter for id
   attr_reader :id
 
-  # getter for name and age
+  # getter and setter for name and age
   attr_accessor :name, :age
 
   def can_use_services?
