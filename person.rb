@@ -22,6 +22,10 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
+  def rentals
+    Rental.all.select { |rental| rental.person == self }
+  end
+
   private
 
   def of_age?
