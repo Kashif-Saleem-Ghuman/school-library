@@ -45,7 +45,7 @@ class App
       create_teacher
     else
       puts 'Invalid option'
-      return
+      nil
     end
   end
 
@@ -68,10 +68,9 @@ class App
       puts 'Student created successfully'
     else
       puts 'Invalid option'
-      return
+      nil
     end
   end
-  
 
   def create_teacher
     puts 'create a new teacher'
