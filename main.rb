@@ -1,10 +1,38 @@
-require_relative 'Person'
-require_relative 'capitalize_decorator'
-require_relative 'trimmer_decorator'
+require_relative 'app'
 
-person = Person.new(22, 'maximilianus')
-p person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-p capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-p capitalized_trimmed_person.correct_name
+def main
+  app = App.new
+  app.start_console
+end
+
+def list_of_options
+  puts 'Please choose an option by entering a number:'
+  puts '1 - List all books'
+  puts '2 - List all people'
+  puts '3 - Create a person'
+  puts '4 - Create a book'
+  puts '5 - Create a rental'
+  puts '6 - List all rentals for a given person id'
+  puts '7 - Exit'
+end
+
+def option(input)
+  case input
+  when '1'
+    list_all_books
+  when '2'
+    list_all_persons
+  when '3'
+    create_person
+  when '4'
+    create_book
+  when '5'
+    create_rental
+  when '6'
+    list_rentals
+  else
+    puts 'Invalid option'
+  end
+end
+
+main
