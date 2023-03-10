@@ -1,4 +1,4 @@
-require_relative 'Person'
+require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'book'
@@ -12,18 +12,16 @@ class App
     @rentals = []
   end
 
-
   def start_console
-    puts 'welcome to shool library app!'
+    puts 'welcome to school Library App!'
     until list_of_options
       input = gets.chomp
       if input == '7'
-        puts 'Thank you for using this school library app!'
+        puts 'Thank You for using our school Library!'
         break
       end
 
       option input
-      end
     end
   end
 
@@ -58,21 +56,22 @@ class App
     puts 'Name:'
     name = gets.chomp
     puts 'Has parent permission? [Y/N]:'
-    parent_permission = gets.chomp.downcase 
+    parent_permission = gets.chomp.downcase
     case parent_permission
     when 'y'
-      student = Student.new(age: age, name: name, parent_permission: true, classroom: @classroom)
-      @person << student
+      student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: true)
+      @people << student
       puts 'Student created successfully'
     when 'n'
-      student = Student.new(age: age, name: name, parent_permission: false, classroom: @classroom)
-      @person << student
+      student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: false)
+      @people << student
       puts 'Student created successfully'
     else
       puts 'Invalid option'
       return
     end
   end
+  
 
   def create_teacher
     puts 'create a new teacher'
@@ -82,8 +81,8 @@ class App
     name = gets.chomp
     puts 'Specialization:'
     specialization = gets.chomp
-    teacher = Teacher.new(age: age, name: name, specialization: specialization)
-    @person << teacher
+    teacher = Teacher.new(age, name, specialization)
+    @people << teacher
     puts 'Teacher created successfully'
   end
 
@@ -95,32 +94,33 @@ class App
     author = gets.chomp
     book = Book.new(title, author)
     @books << book
-    puts 'Book #{title} created successfully'
+    puts "Book #{title} created successfully."
   end
 
   def create_rental
-    puts 'create a new rental'
-    puts 'Select a book from the following list by number'
-    @books.each_with_index { |book, index| puts "#{index}) #{book.title}, Author: #{book.author}" }
-    book_index = gets.chomp.to_i
+    puts 'select the book you want to rent by entering it\'s number'
+    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    book_id = gets.chomp.to_i
     return puts 'sorry wrong input' unless (0...@books.length).include?(book_id)
 
-    puts 'Select a person from the following list by number (not id)'
-    tem_person = @person.select(&:can_use_services?)
-    tem_person.each_with_index { |person, index| puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
-
-    person_index = gets.chomp.to_i
-    return puts 'sorry wrong input' unless (0...tem_person.length).include?(person_index)
-
-    puts 'Date:'
+    puts 'select person from the list by its number'
+    tem_person = @people.select(&:can_use_services?)
+    tem_person.each_with_index do |person, index|
+      puts "#{index} [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
+    person_id = gets.chomp.to_i
+    unless (0...tem_person.length).include?(person_id)
+      puts 'sorry wrong input'
+      return
+    end
+    print 'Date: '
     date = gets.chomp.to_s
-    rental = Rental.new(date, @books[book_index], tem_person[person_index])
+    rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
     puts 'Rental created successfully'
   end
 
-
-  def list_all_rentals_for_person_id
+  def list_rentals
     puts 'ID of person:'
     id = gets.chomp.to_i
     puts 'Rentals:'
@@ -132,3 +132,4 @@ class App
       end
     end
   end
+end
