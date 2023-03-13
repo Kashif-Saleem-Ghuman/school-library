@@ -4,6 +4,8 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'classroom'
+require_relative 'options'
+
 
 class App
   def initialize
@@ -20,8 +22,8 @@ class App
         puts 'Thank You for using our school Library!'
         break
       end
-
-      option input
+      option1 = Options.new
+      option1.option input
     end
   end
 

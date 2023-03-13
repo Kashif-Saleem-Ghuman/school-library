@@ -16,23 +16,4 @@ def list_of_options
   puts '7 - Exit'
 end
 
-def option(input)
-  case input
-  when '1'
-    list_all_books
-  when '2'
-    list_all_persons
-  when '3'
-    create_person
-  when '4'
-    create_book
-  when '5'
-    create_rental
-  when '6'
-    list_rentals
-  else
-    puts 'Invalid option'
-  end
-end
-
 main
