@@ -6,7 +6,6 @@ require_relative 'rental'
 require_relative 'classroom'
 require_relative 'options'
 
-
 class App
   def initialize
     @books = []
