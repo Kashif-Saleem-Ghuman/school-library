@@ -22,8 +22,7 @@ class App
         puts 'Thank You for using our school Library!'
         break
       end
-      option1 = Options.new
-      option1.option input
+      option input
     end
   end
 
