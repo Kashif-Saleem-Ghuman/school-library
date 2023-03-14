@@ -4,26 +4,12 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'classroom'
-require_relative 'options'
 
 class App
   def initialize
     @books = []
     @people = []
     @rentals = []
-  end
-
-  def start_console
-    puts 'welcome to school Library App!'
-    until list_of_options
-      input = gets.chomp
-      if input == '7'
-        puts 'Thank You for using our school Library!'
-        break
-      end
-      option1 = Options.new
-      option1.option input
-    end
   end
 
   def list_all_books
