@@ -8,7 +8,7 @@ class Main
   end
 
   def start_console
-     load_data(@app)
+    load_data(@app)
     puts 'welcome to school Library App!'
     until list_of_options
       input = gets.chomp
@@ -47,7 +47,7 @@ class Main
     when '6'
       @app.list_rentals
     when '7'
-      puts "Invalid Option"
+      puts 'Invalid Option'
     end
   end
 end
