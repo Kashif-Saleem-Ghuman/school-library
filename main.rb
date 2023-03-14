@@ -48,5 +48,5 @@ class Main
   end
 end
 
-main_1 = Main.new
-main_1.start_console
+main1 = Main.new
+main1.start_console
