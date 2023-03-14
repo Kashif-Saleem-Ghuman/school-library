@@ -4,12 +4,15 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'classroom'
-
+require './write_read'
 class App
   def initialize
     @books = []
     @people = []
     @rentals = []
+  
+    load_books
+   
   end
 
   def list_all_books
@@ -81,6 +84,7 @@ class App
     book = Book.new(title, author)
     @books << book
     puts "Book #{title} created successfully."
+    store_books
   end
 
   def create_rental
