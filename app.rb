@@ -12,19 +12,6 @@ class App
     @rentals = []
   end
 
-  def start_console
-    puts 'welcome to school Library App!'
-    until list_of_options
-      input = gets.chomp
-      if input == '7'
-        puts 'Thank You for using our school Library!'
-        break
-      end
-
-      option input
-    end
-  end
-
   def list_all_books
     puts 'Please add a book to the library' if @books.empty?
     @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
