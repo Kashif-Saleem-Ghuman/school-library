@@ -43,7 +43,7 @@ class Main
     when '6'
       @app.list_rentals
     else
-      puts 'Invalid option'
+      store_books(@app)
     end
   end
 end
