@@ -1,10 +1,10 @@
 require 'json'
 
 def load_data(library)
-  loading_books(library)
+  load_books(library)
 end
 
-def loading_books(library)
+def load_books(library)
     File.write('books.json', JSON.generate([])) unless File.exist?('books.json')
     books = JSON.parse(File.read('books.json'))
     books.each do |book|

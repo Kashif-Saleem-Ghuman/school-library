@@ -1,4 +1,6 @@
 require_relative 'app'
+require './storebooks'
+require './loadbooks'
 
 class Main
   def initialize
@@ -6,11 +8,13 @@ class Main
   end
 
   def start_console
+     load_data(@app)
     puts 'welcome to school Library App!'
     until list_of_options
       input = gets.chomp
       if input == '7'
         puts 'Thank You for using our school Library!'
+        store_data(@app)
         break
       end
       option(input)
@@ -42,8 +46,8 @@ class Main
       @app.create_rental
     when '6'
       @app.list_rentals
-    else
-      store_books(@app)
+    when '7'
+      puts "Invalid Option"
     end
   end
 end
