@@ -6,7 +6,7 @@ end
 
 def store_books(library)
   books = []
-  library.books.each do |book|
+  @library.books.each do |book|
     book = { title: book.title, author: book.author }
     books.push(book)
   end
