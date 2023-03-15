@@ -111,6 +111,7 @@ class App
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
+    store_rentals
     puts 'Rental created successfully'
   end
 

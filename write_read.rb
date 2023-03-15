@@ -55,3 +55,31 @@ def read_people
     []
   end
 end
+
+def store_rentals
+  rental_store = @rentals.map do |rental|
+    { date: rental.date,
+      person_index: @people.index(rental.person),
+      book_index: @books.index(rental.book)
+    }
+  end
+  
+  File.new('rentals.json', 'w') unless File.exist?('rentals.json')
+  File.open('rentals.json', 'w') do |file|
+      file.puts(JSON.generate(rental_store))
+  end
+end
+
+
+def read_rentals
+  if File.exist?('rentals.json')
+    File.open('rentals.json', 'r') do |file|
+      rental_store = JSON.parse(file.read)
+      rental_store.each do |rental|
+        @rentals << Rental.new(rental['date'], @people[rental['person_index']], @books[rental['book_index']])
+      end
+    end
+  else
+    []
+  end
+end
