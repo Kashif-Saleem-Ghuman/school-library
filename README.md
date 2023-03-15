@@ -83,6 +83,12 @@ A basic understanding of Ruby and Git
 - GitHub: [Kashif](https://github.com/Kashif-Saleem-Ghuman)
 - Twitter: [Kashif](https://twitter.com/Kashif14Saleem)
 - LinkedIn: [Kashif](https://www.linkedin.com/in/kashifsaleemghuman/)
+
+ 👤 **Riyaz Ahmed**
+
+- GitHub: [@r-ahmed2022](https://github.com/r-ahmed2022)
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/riyaz-ahmed-4216a71a8/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
