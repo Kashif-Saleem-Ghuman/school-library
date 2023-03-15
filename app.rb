@@ -12,6 +12,7 @@ class App
     @rentals = []
   
     load_books
+    read_people
    
   end
 
@@ -50,16 +51,18 @@ class App
     case parent_permission
     when 'y'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: true)
-      @people << student
+      
       puts 'Student created successfully'
     when 'n'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: false)
-      @people << student
+    
       puts 'Student created successfully'
     else
       puts 'Invalid option'
       nil
     end
+    @people << student
+    store_people
   end
 
   def create_teacher
@@ -69,9 +72,10 @@ class App
     puts 'Name:'
     name = gets.chomp
     puts 'Specialization:'
-    specialization = gets.chomp
-    teacher = Teacher.new(age, name, specialization)
+    sepcialization = gets.chomp
+    teacher = Teacher.new(sepcialization, age, name)
     @people << teacher
+    store_people
     puts 'Teacher created successfully'
   end
 
