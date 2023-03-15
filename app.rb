@@ -14,6 +14,7 @@ class App
     @rentals = []
   end
 
+<<<<<<< HEAD
   def start_console
     puts 'welcome to school Library App!'
     until list_of_options
@@ -26,6 +27,8 @@ class App
     end
   end
 
+=======
+>>>>>>> 1df6186e77ee5817b05a52a16d567e61f5dd1f03
   def list_all_books
     puts 'Please add a book to the library' if @books.empty?
     @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
