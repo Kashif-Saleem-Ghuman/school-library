@@ -42,8 +42,8 @@ class Main
       @app.create_rental
     when '6'
       @app.list_rentals
-    else
-      puts 'Invalid option'
+    when '7'
+      puts 'Invalid Option'
     end
   end
 end

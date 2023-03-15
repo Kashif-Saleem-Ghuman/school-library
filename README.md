@@ -85,7 +85,6 @@ A basic understanding of Ruby and Git
 - LinkedIn: [Kashif](https://www.linkedin.com/in/kashifsaleemghuman/)
 
 👤 **Riyaz Ahmed**
-
 - GitHub: [@r-ahmed2022](https://github.com/r-ahmed2022)
 - LinkedIn: [Linkedin](https://www.linkedin.com/in/riyaz-ahmed-4216a71a8/)
 
