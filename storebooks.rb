@@ -1,8 +1,8 @@
 require 'json'
 
 def store_books
-   books = []
-    books.each do |book|
+  books = []
+  books.each do |book|
     book = { title: book.title, author: book.author }
     books.push(book)
   end
