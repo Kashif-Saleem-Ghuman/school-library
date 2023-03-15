@@ -1,1 +1,1 @@
-[{"occupation":"Student","name":"ali","age":22,"parent_permission":true},{"occupation":"Teacher","specialization":null,"age":33,"name":"sara"},{"occupation":"Student","name":"a","age":33,"parent_permission":true}]
+[{"occupation":"Student","name":"ali","age":22,"parent_permission":true},{"occupation":"Teacher","specialization":null,"age":33,"name":"sara"},{"occupation":"Student","name":"a","age":33,"parent_permission":true},{"occupation":"Student","name":"Asim","age":16,"parent_permission":false},{"occupation":"Teacher","specialization":"math","age":28,"name":"asim"}]
