@@ -13,6 +13,7 @@ class App
   
     load_books
     read_people
+    read_rentals
    
   end
 
