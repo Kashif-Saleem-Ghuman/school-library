@@ -10,11 +10,10 @@ class App
     @books = []
     @people = []
     @rentals = []
-  
+
     load_books
     read_people
     read_rentals
-   
   end
 
   def list_all_books
@@ -52,11 +51,11 @@ class App
     case parent_permission
     when 'y'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: true)
-      
+
       puts 'Student created successfully'
     when 'n'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: false)
-    
+
       puts 'Student created successfully'
     else
       puts 'Invalid option'
