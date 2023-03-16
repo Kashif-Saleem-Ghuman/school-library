@@ -4,17 +4,18 @@ require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
 require_relative 'classroom'
-require_relative 'options'
-
-
+require './write_read'
 class App
   def initialize
     @books = []
     @people = []
     @rentals = []
+
+    load_books
+    read_people
+    read_rentals
   end
 
-<<<<<<< HEAD
   def start_console
     puts 'welcome to school Library App!'
     until list_of_options
@@ -27,8 +28,6 @@ class App
     end
   end
 
-=======
->>>>>>> 1df6186e77ee5817b05a52a16d567e61f5dd1f03
   def list_all_books
     puts 'Please add a book to the library' if @books.empty?
     @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
@@ -64,16 +63,18 @@ class App
     case parent_permission
     when 'y'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: true)
-      @people << student
+
       puts 'Student created successfully'
     when 'n'
       student = Student.new(classroom: @classroom, age: age, name: name, parent_permission: false)
-      @people << student
+
       puts 'Student created successfully'
     else
       puts 'Invalid option'
       nil
     end
+    @people << student
+    store_people
   end
 
   def create_teacher
@@ -83,9 +84,10 @@ class App
     puts 'Name:'
     name = gets.chomp
     puts 'Specialization:'
-    specialization = gets.chomp
-    teacher = Teacher.new(age, name, specialization)
+    sepcialization = gets.chomp
+    teacher = Teacher.new(sepcialization, age, name)
     @people << teacher
+    store_people
     puts 'Teacher created successfully'
   end
 
@@ -98,6 +100,7 @@ class App
     book = Book.new(title, author)
     @books << book
     puts "Book #{title} created successfully."
+    store_books
   end
 
   def create_rental
@@ -120,6 +123,7 @@ class App
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
+    store_rentals
     puts 'Rental created successfully'
   end
 
