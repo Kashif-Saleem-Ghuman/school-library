@@ -1,6 +1,5 @@
 require_relative '../student'
 
-
 # Test for initialize method
 describe Student do
   it 'should create instance of the student class with 4 parameters' do
