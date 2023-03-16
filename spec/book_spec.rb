@@ -7,7 +7,6 @@ describe Book do
   end
 end
 
-# Test for title
 describe '#title' do
   it 'should return the title' do
     book = Book.new('My Title', 'My Author')
