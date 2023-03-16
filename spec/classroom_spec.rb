@@ -7,10 +7,10 @@ describe Classroom do
 
   describe '#add_student' do
     it 'adds the student to the classroom' do
-      expect {
+      expect do
         classroom.add_student(student)
-      }.to change { classroom.students.length }.by(2)
-      
+      end.to change { classroom.students.length }.by(2)
+
       expect(classroom.students).to include(student)
     end
   end
